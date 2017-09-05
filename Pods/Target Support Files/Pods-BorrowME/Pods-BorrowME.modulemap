@@ -1,0 +1,6 @@
+framework module Pods_BorrowME {
+  umbrella header "Pods-BorrowME-umbrella.h"
+
+  export *
+  module * { export * }
+}
