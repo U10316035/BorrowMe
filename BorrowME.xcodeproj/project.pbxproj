@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8819825E1F5E955800306D08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8819825D1F5E955800306D08 /* GoogleService-Info.plist */; };
+		88489A6A1F5E8B0100F2EA5A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88489A691F5E8B0100F2EA5A /* TestViewController.swift */; };
+		A54440BB061A06C5CB21F3F0 /* Pods_BorrowME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */; };
 		CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3776651F5BB55E00992015 /* AppDelegate.swift */; };
 		CE3776681F5BB55E00992015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3776671F5BB55E00992015 /* ViewController.swift */; };
 		CE37766B1F5BB55E00992015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3776691F5BB55E00992015 /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BorrowME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8819825D1F5E955800306D08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88489A691F5E8B0100F2EA5A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CE3776621F5BB55E00992015 /* BorrowME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3776651F5BB55E00992015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE3776671F5BB55E00992015 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		CE37766C1F5BB55E00992015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE37766F1F5BB55E00992015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE3776711F5BB55E00992015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE77E01CBD7628C39E10D33 /* Pods-BorrowME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowME.release.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowME/Pods-BorrowME.release.xcconfig"; sourceTree = "<group>"; };
+		FB7EDA367AC556C151EB8CAA /* Pods-BorrowME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BorrowME.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BorrowME/Pods-BorrowME.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54440BB061A06C5CB21F3F0 /* Pods_BorrowME.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36A8537908A62C48377B4579 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96EE94051AA84B99E0E4C9F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB7EDA367AC556C151EB8CAA /* Pods-BorrowME.debug.xcconfig */,
+				FAE77E01CBD7628C39E10D33 /* Pods-BorrowME.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE3776591F5BB55E00992015 = {
 			isa = PBXGroup;
 			children = (
 				CE3776641F5BB55E00992015 /* BorrowME */,
 				CE3776631F5BB55E00992015 /* Products */,
+				96EE94051AA84B99E0E4C9F6 /* Pods */,
+				36A8537908A62C48377B4579 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +82,14 @@
 		CE3776641F5BB55E00992015 /* BorrowME */ = {
 			isa = PBXGroup;
 			children = (
+				8819825D1F5E955800306D08 /* GoogleService-Info.plist */,
 				CE3776651F5BB55E00992015 /* AppDelegate.swift */,
 				CE3776671F5BB55E00992015 /* ViewController.swift */,
 				CE3776691F5BB55E00992015 /* Main.storyboard */,
 				CE37766C1F5BB55E00992015 /* Assets.xcassets */,
 				CE37766E1F5BB55E00992015 /* LaunchScreen.storyboard */,
 				CE3776711F5BB55E00992015 /* Info.plist */,
+				88489A691F5E8B0100F2EA5A /* TestViewController.swift */,
 			);
 			path = BorrowME;
 			sourceTree = "<group>";
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE3776741F5BB55E00992015 /* Build configuration list for PBXNativeTarget "BorrowME" */;
 			buildPhases = (
+				C411FC5BD8EE981CE5D91C02 /* [CP] Check Pods Manifest.lock */,
 				CE37765E1F5BB55E00992015 /* Sources */,
 				CE37765F1F5BB55E00992015 /* Frameworks */,
 				CE3776601F5BB55E00992015 /* Resources */,
+				BD1D9770C371AF1B9F288A3A /* [CP] Embed Pods Frameworks */,
+				8D28BF314E2015433DDEC095 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3776701F5BB55E00992015 /* LaunchScreen.storyboard in Resources */,
+				8819825E1F5E955800306D08 /* GoogleService-Info.plist in Resources */,
 				CE37766D1F5BB55E00992015 /* Assets.xcassets in Resources */,
 				CE37766B1F5BB55E00992015 /* Main.storyboard in Resources */,
 			);
@@ -131,12 +165,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8D28BF314E2015433DDEC095 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BorrowME/Pods-BorrowME-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD1D9770C371AF1B9F288A3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BorrowME/Pods-BorrowME-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BorrowME/Pods-BorrowME-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C411FC5BD8EE981CE5D91C02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BorrowME-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE37765E1F5BB55E00992015 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CE3776681F5BB55E00992015 /* ViewController.swift in Sources */,
+				88489A6A1F5E8B0100F2EA5A /* TestViewController.swift in Sources */,
 				CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,10 +365,12 @@
 		};
 		CE3776751F5BB55E00992015 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB7EDA367AC556C151EB8CAA /* Pods-BorrowME.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BorrowME/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = team3.BorrowME;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,10 +381,12 @@
 		};
 		CE3776761F5BB55E00992015 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAE77E01CBD7628C39E10D33 /* Pods-BorrowME.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BorrowME/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = team3.BorrowME;
 				PRODUCT_NAME = "$(TARGET_NAME)";
