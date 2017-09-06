@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8819825E1F5E955800306D08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8819825D1F5E955800306D08 /* GoogleService-Info.plist */; };
-		88489A6A1F5E8B0100F2EA5A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88489A691F5E8B0100F2EA5A /* TestViewController.swift */; };
 		A54440BB061A06C5CB21F3F0 /* Pods_BorrowME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */; };
 		CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3776651F5BB55E00992015 /* AppDelegate.swift */; };
 		CE3776681F5BB55E00992015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3776671F5BB55E00992015 /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BorrowME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8819825D1F5E955800306D08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		88489A691F5E8B0100F2EA5A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CE3776621F5BB55E00992015 /* BorrowME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3776651F5BB55E00992015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE3776671F5BB55E00992015 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +48,27 @@
 				0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		888CBB541F5F9A54003EE9C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		888CBB551F5F9A66003EE9C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		888CBB561F5F9A7B003EE9C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		96EE94051AA84B99E0E4C9F6 /* Pods */ = {
@@ -82,6 +101,9 @@
 		CE3776641F5BB55E00992015 /* BorrowME */ = {
 			isa = PBXGroup;
 			children = (
+				888CBB561F5F9A7B003EE9C8 /* Controller */,
+				888CBB551F5F9A66003EE9C8 /* View */,
+				888CBB541F5F9A54003EE9C8 /* Model */,
 				8819825D1F5E955800306D08 /* GoogleService-Info.plist */,
 				CE3776651F5BB55E00992015 /* AppDelegate.swift */,
 				CE3776671F5BB55E00992015 /* ViewController.swift */,
@@ -89,7 +111,6 @@
 				CE37766C1F5BB55E00992015 /* Assets.xcassets */,
 				CE37766E1F5BB55E00992015 /* LaunchScreen.storyboard */,
 				CE3776711F5BB55E00992015 /* Info.plist */,
-				88489A691F5E8B0100F2EA5A /* TestViewController.swift */,
 			);
 			path = BorrowME;
 			sourceTree = "<group>";
@@ -229,7 +250,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3776681F5BB55E00992015 /* ViewController.swift in Sources */,
-				88489A6A1F5E8B0100F2EA5A /* TestViewController.swift in Sources */,
 				CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
