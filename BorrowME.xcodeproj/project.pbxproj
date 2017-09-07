@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8819825E1F5E955800306D08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8819825D1F5E955800306D08 /* GoogleService-Info.plist */; };
+		886B77E21F60F7F200E7B3EB /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B77E11F60F7F200E7B3EB /* MainPageViewController.swift */; };
+		886B77E41F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */; };
+		888923E91F611BAB00F935AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888923E81F611BAB00F935AF /* LoginViewController.swift */; };
+		888923EB1F611C6400F935AF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888923EA1F611C6400F935AF /* SignUpViewController.swift */; };
+		888923ED1F612DA100F935AF /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888923EC1F612DA100F935AF /* ResetPasswordViewController.swift */; };
 		A54440BB061A06C5CB21F3F0 /* Pods_BorrowME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */; };
 		CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3776651F5BB55E00992015 /* AppDelegate.swift */; };
 		CE3776681F5BB55E00992015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3776671F5BB55E00992015 /* ViewController.swift */; };
@@ -19,6 +24,11 @@
 /* Begin PBXFileReference section */
 		0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BorrowME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8819825D1F5E955800306D08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		886B77E11F60F7F200E7B3EB /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		888923E81F611BAB00F935AF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		888923EA1F611C6400F935AF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		888923EC1F612DA100F935AF /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		CE3776621F5BB55E00992015 /* BorrowME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3776651F5BB55E00992015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE3776671F5BB55E00992015 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +63,7 @@
 		888CBB541F5F9A54003EE9C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -60,6 +71,7 @@
 		888CBB551F5F9A66003EE9C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE3776691F5BB55E00992015 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -67,6 +79,11 @@
 		888CBB561F5F9A7B003EE9C8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CE3776671F5BB55E00992015 /* ViewController.swift */,
+				886B77E11F60F7F200E7B3EB /* MainPageViewController.swift */,
+				888923E81F611BAB00F935AF /* LoginViewController.swift */,
+				888923EA1F611C6400F935AF /* SignUpViewController.swift */,
+				888923EC1F612DA100F935AF /* ResetPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,8 +123,6 @@
 				888CBB541F5F9A54003EE9C8 /* Model */,
 				8819825D1F5E955800306D08 /* GoogleService-Info.plist */,
 				CE3776651F5BB55E00992015 /* AppDelegate.swift */,
-				CE3776671F5BB55E00992015 /* ViewController.swift */,
-				CE3776691F5BB55E00992015 /* Main.storyboard */,
 				CE37766C1F5BB55E00992015 /* Assets.xcassets */,
 				CE37766E1F5BB55E00992015 /* LaunchScreen.storyboard */,
 				CE3776711F5BB55E00992015 /* Info.plist */,
@@ -209,12 +224,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BorrowME/Pods-BorrowME-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -249,8 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888923EB1F611C6400F935AF /* SignUpViewController.swift in Sources */,
+				886B77E41F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift in Sources */,
 				CE3776681F5BB55E00992015 /* ViewController.swift in Sources */,
+				886B77E21F60F7F200E7B3EB /* MainPageViewController.swift in Sources */,
+				888923E91F611BAB00F935AF /* LoginViewController.swift in Sources */,
 				CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */,
+				888923ED1F612DA100F935AF /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

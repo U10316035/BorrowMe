@@ -8,4 +8,5 @@ target 'BorrowME' do
   # Pods for BorrowME
   pod ‘Firebase/Core’
   pod ‘Firebase/Database’
+  pod ‘Firebase/Auth’
 end
