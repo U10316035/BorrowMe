@@ -20,6 +20,9 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
         let cell: MainPageCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "coCell", for:indexPath ) as! MainPageCollectionViewCell
         cell?.labelTest.text = "whaaaaatttt"
         
+        cell?.layer.cornerRadius = 8
+        cell?.layer.masksToBounds = true
+        
         return cell!
     }
     
@@ -27,9 +30,13 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
         super.viewDidLoad()
         //self.mainPageCollectionView.delegate = self
         self.mainPageCollectionView.dataSource = self
+        
+        let myColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
+        self.mainPageCollectionView.backgroundColor = myColor
+        
         // Do any additional setup after loading the view.
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: self.mainPageCollectionView.frame.width,height: self.mainPageCollectionView.frame.height/4.5)
+        layout.itemSize = CGSize(width: self.mainPageCollectionView.frame.width,height: 125)//self.mainPageCollectionView.frame.height/4.5)
         mainPageCollectionView.collectionViewLayout = layout
     }
 
