@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class BorrowPageViewController: UIViewController {
     @IBOutlet weak var itemField: UITextField!
@@ -14,8 +16,19 @@ class BorrowPageViewController: UIViewController {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     
+    //use for test id
+    var userId:String = "00000000"
+    
+    //database connection
+    var ref: DatabaseReference!
+    
+    //data to upload
+    var uploadData:[String:Any] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+
 
         // Do any additional setup after loading the view.
     }
@@ -25,10 +38,26 @@ class BorrowPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancel(_ sender: Any) {
-    }
-    
     @IBAction func confirm(_ sender: Any) {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        let result = formatter.string(from: date)
+        
+        let dataTitle:String = result + userId
+        print(dataTitle)
+        
+        //set upload data
+        uploadData["description"] = descriptionField.text
+        uploadData["item"] = itemField.text
+        uploadData["location"] = locationField.text
+        uploadData["timeLimit"] = timeField.text
+        uploadData["userId"] = userId
+        
+        //send data to firebase
+        self.ref.child("borrowList").child("data\(dataTitle)").setValue(uploadData)
+        
+        dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
@@ -39,5 +68,11 @@ class BorrowPageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func xButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

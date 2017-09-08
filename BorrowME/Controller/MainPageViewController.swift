@@ -17,7 +17,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: MainPageCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "coCell", for:indexPath ) as! MainPageCollectionViewCell
+        let cell: MainPageCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "coCell", for:indexPath ) as? MainPageCollectionViewCell
         cell?.labelTest.text = "whaaaaatttt"
         
         cell?.layer.cornerRadius = 8
@@ -48,7 +48,10 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func showBorrowPage(_ sender: Any) {
+        performSegue(withIdentifier: "toBorrowPage", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

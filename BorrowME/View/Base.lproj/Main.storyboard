@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oVl-nT-v8m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sld-DQ-dOL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -122,6 +122,7 @@
                         <outlet property="passwordField" destination="fQq-Dt-pVR" id="sYi-H9-ZwV"/>
                         <outlet property="usernameField" destination="ePV-Fq-Yts" id="OXw-6M-3qJ"/>
                         <segue destination="Kse-F0-sSD" kind="show" identifier="signUpSegue" id="SCu-is-Ueh"/>
+                        <segue destination="sld-DQ-dOL" kind="show" identifier="loginToMainPageSegue" id="mm2-73-5p6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3Y-IC-j3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,7 +203,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancel:" destination="W7f-E1-itJ" eventType="touchUpInside" id="oGV-Bd-ouV"/>
+                                    <action selector="cancelButton:" destination="W7f-E1-itJ" eventType="touchUpInside" id="1HY-2F-2m6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cP5-f0-HJa">
@@ -213,7 +214,6 @@
                                 </state>
                                 <connections>
                                     <action selector="confirm:" destination="W7f-E1-itJ" eventType="touchUpInside" id="hC3-Cr-1S6"/>
-                                    <segue destination="RyW-6J-hdB" kind="show" id="ovO-so-rEj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhd-Pv-R0H">
@@ -222,6 +222,9 @@
                                 <state key="normal" title="back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="xButton:" destination="W7f-E1-itJ" eventType="touchUpInside" id="M1A-Vd-yd9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,6 +242,7 @@
                         <outlet property="itemField" destination="ohn-BC-Ro8" id="hID-23-tpM"/>
                         <outlet property="locationField" destination="kwk-jC-1tF" id="rFO-g1-qsR"/>
                         <outlet property="timeField" destination="CwD-sd-wpS" id="S3G-Ci-mXb"/>
+                        <segue destination="RyW-6J-hdB" kind="show" id="hWl-On-nzk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHO-lD-yRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,7 +688,11 @@
                                 <items>
                                     <barButtonItem title="menu" id="0YV-2o-oQR"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lke-Gs-efb"/>
-                                    <barButtonItem title="借物" id="nfz-cv-paj"/>
+                                    <barButtonItem title="借物" id="nfz-cv-paj">
+                                        <connections>
+                                            <action selector="showBorrowPage:" destination="sld-DQ-dOL" id="yF9-el-Xxq"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nGl-QP-Vgx"/>
                                     <barButtonItem title="訊息" id="kbf-NU-er6"/>
                                 </items>
