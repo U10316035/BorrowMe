@@ -242,33 +242,67 @@
                         <outlet property="itemField" destination="ohn-BC-Ro8" id="hID-23-tpM"/>
                         <outlet property="locationField" destination="kwk-jC-1tF" id="rFO-g1-qsR"/>
                         <outlet property="timeField" destination="CwD-sd-wpS" id="S3G-Ci-mXb"/>
-                        <segue destination="RyW-6J-hdB" kind="show" id="hWl-On-nzk"/>
+                        <segue destination="RyW-6J-hdB" kind="show" identifier="toFinishUploadPage" id="hWl-On-nzk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHO-lD-yRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1533.5999999999999" y="864.91754122938539"/>
         </scene>
-        <!--View Controller-->
+        <!--Finish Upload View Controller-->
         <scene sceneID="CLa-JF-4yn">
             <objects>
-                <viewController id="RyW-6J-hdB" sceneMemberID="viewController">
+                <viewController id="RyW-6J-hdB" customClass="FinishUploadViewController" customModule="BorrowME" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ACP-Ug-lLL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="螢幕快照 2017-09-03 下午2.40.47" translatesAutoresizingMaskIntoConstraints="NO" id="Vyh-kG-asS">
-                                <rect key="frame" x="67" y="187" width="240" height="292"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main Bg" translatesAutoresizingMaskIntoConstraints="NO" id="TiP-5W-DPw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-sa-p2V">
+                                <rect key="frame" x="128" y="88" width="118" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="刊登成功">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="0.94901999999999997" green="0.94901999999999997" blue="0.94901999999999997" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="28" name="PingFangTC-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSStrokeColor" red="0.34117999999999998" green="0.27843000000000001" blue="0.31764999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9W-Ny-WTI">
+                                <rect key="frame" x="164" y="250" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="回首頁">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToMainPage:" destination="RyW-6J-hdB" eventType="touchUpInside" id="EsP-4l-Kc3"/>
+                                    <segue destination="xGn-2B-I7O" kind="unwind" unwindAction="homeWithSegue:" id="lYH-0t-y6a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TiP-5W-DPw" firstAttribute="bottom" secondItem="0ci-lz-duf" secondAttribute="bottom" id="9Yd-b6-QKx"/>
+                            <constraint firstItem="TiP-5W-DPw" firstAttribute="top" secondItem="ACP-Ug-lLL" secondAttribute="top" id="N4L-XL-dQd"/>
+                            <constraint firstItem="TiP-5W-DPw" firstAttribute="leading" secondItem="0ci-lz-duf" secondAttribute="leading" id="TdX-BV-2kQ"/>
+                            <constraint firstItem="TiP-5W-DPw" firstAttribute="trailing" secondItem="0ci-lz-duf" secondAttribute="trailing" id="gT9-IO-r9o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0ci-lz-duf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZK-dI-Tf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xGn-2B-I7O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="1622"/>
+            <point key="canvasLocation" x="1533.5999999999999" y="1621.4392803598203"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ScN-zA-A4f">
@@ -787,6 +821,5 @@
         <image name="line" width="360" height="360"/>
         <image name="line-1" width="360" height="360"/>
         <image name="profile" width="300" height="300"/>
-        <image name="螢幕快照 2017-09-03 下午2.40.47" width="231" height="306"/>
     </resources>
 </document>

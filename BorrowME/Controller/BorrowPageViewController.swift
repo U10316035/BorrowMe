@@ -57,7 +57,7 @@ class BorrowPageViewController: UIViewController {
         //send data to firebase
         self.ref.child("borrowList").child("data\(dataTitle)").setValue(uploadData)
         
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toFinishUploadPage", sender: nil)
     }
     /*
     // MARK: - Navigation
@@ -73,6 +73,10 @@ class BorrowPageViewController: UIViewController {
     }
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func home(segue:UIStoryboardSegue){
+        //dismiss(animated: false, completion: nil)
     }
     
 }
