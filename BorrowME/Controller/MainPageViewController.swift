@@ -28,11 +28,14 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let myColor = UIColor(red: 0.196, green: 0.149, blue: 0.416, alpha: 1)
+        self.view.backgroundColor = myColor
+        UIApplication.shared.statusBarStyle = .lightContent
         //self.mainPageCollectionView.delegate = self
         self.mainPageCollectionView.dataSource = self
         
-        let myColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
-        self.mainPageCollectionView.backgroundColor = myColor
+        let transparentColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
+        self.mainPageCollectionView.backgroundColor = transparentColor
         
         // Do any additional setup after loading the view.
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()

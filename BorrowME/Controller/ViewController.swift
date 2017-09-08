@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+        UIApplication.shared.statusBarStyle = .lightContent
+        let myColor = UIColor(red: 0.196, green: 0.149, blue: 0.416, alpha: 1)
         self.view.backgroundColor = myColor
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval: 3,
