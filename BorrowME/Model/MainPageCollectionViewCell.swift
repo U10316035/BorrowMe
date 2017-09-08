@@ -9,6 +9,9 @@
 import UIKit
 
 class MainPageCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var labelTest: UILabel!
+    @IBOutlet weak var userPic: UIImageView!
     
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var borrowItem: UILabel!
 }

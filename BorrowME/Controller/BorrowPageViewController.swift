@@ -45,7 +45,7 @@ class BorrowPageViewController: UIViewController {
         let result = formatter.string(from: date)
         
         let dataTitle:String = result + userId
-        print(dataTitle)
+        //print(dataTitle)
         
         //set upload data
         uploadData["description"] = descriptionField.text
@@ -53,6 +53,7 @@ class BorrowPageViewController: UIViewController {
         uploadData["location"] = locationField.text
         uploadData["timeLimit"] = timeField.text
         uploadData["userId"] = userId
+        uploadData["uploadTime"] = result
         
         //send data to firebase
         self.ref.child("borrowList").child("data\(dataTitle)").setValue(uploadData)
@@ -74,9 +75,4 @@ class BorrowPageViewController: UIViewController {
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func home(segue:UIStoryboardSegue){
-        //dismiss(animated: false, completion: nil)
-    }
-    
 }
