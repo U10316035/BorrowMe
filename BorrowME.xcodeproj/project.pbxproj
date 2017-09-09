@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8819825E1F5E955800306D08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8819825D1F5E955800306D08 /* GoogleService-Info.plist */; };
+		886AEF271F63D91D00D68CD6 /* borrowListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886AEF261F63D91D00D68CD6 /* borrowListStruct.swift */; };
 		886B77E21F60F7F200E7B3EB /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B77E11F60F7F200E7B3EB /* MainPageViewController.swift */; };
 		886B77E41F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */; };
 		888923E91F611BAB00F935AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888923E81F611BAB00F935AF /* LoginViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BorrowME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8819825D1F5E955800306D08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		886AEF261F63D91D00D68CD6 /* borrowListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borrowListStruct.swift; sourceTree = "<group>"; };
 		886B77E11F60F7F200E7B3EB /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		888923E81F611BAB00F935AF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */,
+				886AEF261F63D91D00D68CD6 /* borrowListStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				886B77E21F60F7F200E7B3EB /* MainPageViewController.swift in Sources */,
 				888923E91F611BAB00F935AF /* LoginViewController.swift in Sources */,
 				CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */,
+				886AEF271F63D91D00D68CD6 /* borrowListStruct.swift in Sources */,
 				888923ED1F612DA100F935AF /* ResetPasswordViewController.swift in Sources */,
 				88C9E7121F6234DD0065DA9F /* MapViewController.swift in Sources */,
 				88CF6F151F638C610060CB73 /* ChatRoomListViewController.swift in Sources */,

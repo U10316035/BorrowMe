@@ -40,6 +40,16 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
             if let itemTitle = dict["item"] as? String{
                 cell?.borrowItem.text = itemTitle
             }
+            
+            if let itemDes = dict["description"] as? String{
+                cell?.itemDescription.text = itemDes
+            }
+            
+            if let listTime = dict["uploadTime"] as? String{
+                if let timeInt = Int(listTime){
+                    cell?.borrowTime.text = "\(timeInt/10000000000)年 \(timeInt%10000000000/100000000)月 \(timeInt%100000000/1000000)日"
+                }
+            }
         }
         
         if !dataLoaded{
@@ -145,7 +155,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
     
     func getUserData(){
         let dataCount = userId.count
-        for userItem in 0..<userId.count{
+        for userItem in 0..<dataCount{
             ref.child("user").child("user\(userId[userItem])").observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 if let data = snapshot.value as? NSDictionary{
@@ -153,7 +163,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
                         self.userNameArray.append(nameInBase)
                     }
                 }
-                if userItem == self.userId.count - 1{
+                if userItem == dataCount - 1{
                     self.dataLoaded = true
                     self.mainPageCollectionView.reloadData()
                 }

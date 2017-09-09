@@ -27,7 +27,13 @@ class BorrowPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //database reference
         ref = Database.database().reference()
+        
+        //set view
+            setViewFunc()
+        //end set view
 
 
         // Do any additional setup after loading the view.
@@ -72,7 +78,39 @@ class BorrowPageViewController: UIViewController {
     @IBAction func xButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    @IBAction func cancelButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    
+    func setViewFunc(){
+        
+        //common value
+        let width = CGFloat(2.0)
+        let myColor = UIColor(red: 0.09, green: 0.165, blue: 0.533, alpha: 1)
+        
+        //itemField
+        let borderItemField = CALayer()
+        borderItemField.borderColor = myColor.cgColor
+        borderItemField.frame = CGRect(x: 0, y: itemField.frame.size.height - width, width:  itemField.frame.size.width, height: itemField.frame.size.height)
+        borderItemField.borderWidth = width
+        itemField.layer.addSublayer(borderItemField)
+        itemField.layer.masksToBounds = true
+        itemField.attributedPlaceholder = NSAttributedString(string:"Item", attributes:[NSAttributedStringKey.foregroundColor: UIColor(red: 0.09, green: 0.165, blue: 0.533, alpha: 1)])
+        
+        //locationField
+        let borderLocationField = CALayer()
+        borderLocationField.borderColor = myColor.cgColor
+        borderLocationField.frame = CGRect(x: 0, y: locationField.frame.size.height - width, width:  locationField.frame.size.width, height: locationField.frame.size.height)
+        borderLocationField.borderWidth = width
+        locationField.layer.addSublayer(borderLocationField)
+        locationField.layer.masksToBounds = true
+        locationField.attributedPlaceholder = NSAttributedString(string:"Location", attributes:[NSAttributedStringKey.foregroundColor: UIColor(red: 0.09, green: 0.165, blue: 0.533, alpha: 1)])
+        
+        //timeField
+        let borderTimeField = CALayer()
+        borderTimeField.borderColor = myColor.cgColor
+        borderTimeField.frame = CGRect(x: 0, y: timeField.frame.size.height - width, width:  timeField.frame.size.width, height: timeField.frame.size.height)
+        borderTimeField.borderWidth = width
+        timeField.layer.addSublayer(borderTimeField)
+        timeField.layer.masksToBounds = true
+        timeField.attributedPlaceholder = NSAttributedString(string:"Due Time", attributes:[NSAttributedStringKey.foregroundColor: UIColor(red: 0.09, green: 0.165, blue: 0.533, alpha: 1)])
+        
     }
 }
