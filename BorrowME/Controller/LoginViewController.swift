@@ -14,9 +14,32 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //set view style
+        userNameLabel.layer.borderWidth = 2
+        userNameLabel.layer.borderColor = UIColor.white.cgColor
+        userNameLabel.layer.cornerRadius = 8
+        //userNameLabel.layer.masksToBounds = true
+        
+        passwordLabel.layer.borderWidth = 2
+        passwordLabel.layer.borderColor = UIColor.white.cgColor
+        passwordLabel.layer.cornerRadius = 8
+        //passwordLabel.layer.masksToBounds = true
+        
+        loginButton.layer.cornerRadius = 15
+        
+        usernameField.attributedPlaceholder = NSAttributedString(string:"E-Mail", attributes:[NSAttributedStringKey.foregroundColor: UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)])
+        //usernameField.layer.borderWidth = 0
+        passwordField.attributedPlaceholder = NSAttributedString(string:"Password", attributes:[NSAttributedStringKey.foregroundColor: UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)])
+        //passwordField.layer.borderWidth = 0
+        
+        //end set view style
+        
         // Do any additional setup after loading the view.
     }
 
