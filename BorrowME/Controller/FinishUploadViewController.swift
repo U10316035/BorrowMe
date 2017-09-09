@@ -10,9 +10,14 @@ import UIKit
 
 class FinishUploadViewController: UIViewController {
 
+    @IBOutlet weak var backButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //set view
+        backButton.layer.cornerRadius = 15
+        //set view end
+        
         // Do any additional setup after loading the view.
     }
 
