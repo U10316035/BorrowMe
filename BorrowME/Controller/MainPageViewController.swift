@@ -11,7 +11,7 @@ import Firebase
 
 class MainPageViewController: UIViewController,UICollectionViewDataSource {
     //login get user data
-    var userData:String = ""
+    var userData:[String:Any]? = nil//:String = ""//(String,Any)? = nil
     
     @IBOutlet weak var mainPageCollectionView: UICollectionView!
     var downloadData:[String:Any] = [:]
@@ -223,6 +223,14 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
         //print(timeArrayInt)
         getUserData()
         self.mainPageCollectionView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let borrowVC:BorrowPageViewController = segue.destination as! BorrowPageViewController
+        
+        if let id = userData!["id"] as? String{
+            borrowVC.userId = id
+        }
     }
 
 }
