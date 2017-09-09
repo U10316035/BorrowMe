@@ -20,8 +20,17 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     
+    //database connection
+    var ref: DatabaseReference!
+    
+    //data to upload
+    var uploadData:[String:Any] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //database reference
+        ref = Database.database().reference()
         
         //set view
         setViewFunc()
@@ -58,8 +67,14 @@ class SignUpViewController: UIViewController {
             { (user, error) in
                 if error == nil {
                     print("You have successfully signed up")
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "signupPage")
-                    self.present(vc!, animated: true, completion: nil)
+                    /*let vc = self.storyboard?.instantiateViewController(withIdentifier: "signupPage")
+                    self.present(vc!, animated: true, completion: nil)*/
+                    
+                    //create new user data to database
+                    self.uploadNewUserData()
+                    
+                    //close sign up view
+                    self.dismiss(animated: true, completion: nil)
                 } else {
                     let alertController = UIAlertController(title: "Error",
                                                             message: error?.localizedDescription,
@@ -115,5 +130,37 @@ class SignUpViewController: UIViewController {
         
         loginButton.layer.cornerRadius = 15
         joinButton.layer.cornerRadius = 15
+    }
+    
+    func uploadNewUserData(){
+        uploadData["name"] = nameField.text
+        uploadData["mail"] = emailField.text
+        uploadData["password"] = passwordField.text
+        uploadData["studentId"] = studentIdField.text
+        uploadData["gender"] = genderField.text
+        
+        generateUserIdIfNotExist()
+    }
+    
+    func generateUserIdIfNotExist(){
+        var idGenerate:Int = 0
+        idGenerate = Int(arc4random_uniform(100000001))
+        //print(idGenerate)
+        ref.child("user").child("user\(idGenerate)").observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists() == true {
+                
+                //call itself if id exist
+                self.generateUserIdIfNotExist()
+            }
+            else {
+                self.uploadData["id"] = "\(idGenerate)"
+                
+                //send data to firebase
+                self.ref.child("user").child("user\(idGenerate)").setValue(self.uploadData)
+            }
+
+        }){ (error) in
+            print(error.localizedDescription)
+        }
     }
 }

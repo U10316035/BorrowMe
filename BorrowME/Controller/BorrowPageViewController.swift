@@ -32,7 +32,7 @@ class BorrowPageViewController: UIViewController {
         ref = Database.database().reference()
         
         //set view
-            setViewFunc()
+        setViewFunc()
         //end set view
 
 

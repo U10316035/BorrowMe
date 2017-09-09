@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class MainPageViewController: UIViewController,UICollectionViewDataSource {
+    //login get user data
+    var userData:String = ""
     
     @IBOutlet weak var mainPageCollectionView: UICollectionView!
     var downloadData:[String:Any] = [:]
@@ -66,6 +68,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //set background color
         let myColor = UIColor(red: 0.196, green: 0.149, blue: 0.416, alpha: 1)
         self.view.backgroundColor = myColor
@@ -87,6 +90,8 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
+        
+        print(userData)
         
         //initial value
         timeArrayInt = []

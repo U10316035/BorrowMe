@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sld-DQ-dOL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,19 +22,19 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wellcomeGenie" translatesAutoresizingMaskIntoConstraints="NO" id="4Po-Br-ag9">
-                                <rect key="frame" x="82" y="149" width="210" height="150"/>
+                                <rect key="frame" x="82" y="149" width="210" height="130"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4Po-Br-ag9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="129" id="9Dg-WV-IwV"/>
                             <constraint firstItem="wXg-Vh-g8H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ibq-kv-8JW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Po-Br-ag9" secondAttribute="bottom" constant="388" id="Kdx-rQ-QPV"/>
                             <constraint firstItem="wXg-Vh-g8H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qb2-0Y-wY0"/>
-                            <constraint firstItem="4Po-Br-ag9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="TzT-K4-xCy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Po-Br-ag9" secondAttribute="trailing" constant="83" id="UfQ-FN-9ZB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wXg-Vh-g8H" secondAttribute="trailing" id="ZM1-ne-4Ap"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Po-Br-ag9" secondAttribute="trailing" constant="83" id="hnI-St-P7a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wXg-Vh-g8H" secondAttribute="bottom" id="ivG-G7-qOJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Po-Br-ag9" secondAttribute="bottom" constant="368" id="v0t-yM-E4v"/>
+                            <constraint firstItem="4Po-Br-ag9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="129" id="jHl-e1-9ea"/>
+                            <constraint firstItem="4Po-Br-ag9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="pHR-Cw-Wlq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -539,7 +539,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gBy-gg-1ct"/>
                                 </constraints>
-                                <color key="textColor" red="0.090196078430000007" green="0.1647058824" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -548,7 +548,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="iYv-u9-0Y6"/>
                                 </constraints>
-                                <color key="textColor" red="0.090196078430000007" green="0.1647058824" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -557,7 +557,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Lx0-Dc-rRb"/>
                                 </constraints>
-                                <color key="textColor" red="0.090196078430000007" green="0.1647058824" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -650,7 +650,7 @@
         <!--Main Page View Controller-->
         <scene sceneID="VMF-xi-ZfG">
             <objects>
-                <viewController id="sld-DQ-dOL" customClass="MainPageViewController" customModule="BorrowME" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainPage" id="sld-DQ-dOL" customClass="MainPageViewController" customModule="BorrowME" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lwh-d2-5gd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -61,8 +61,9 @@ class LoginViewController: UIViewController {
                                password: self.passwordField.text!)
             { (user, error) in
                 if error == nil {
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginPage")
-                    self.present(vc!, animated: true, completion: nil)
+//                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainPage")
+//                    self.present(vc!, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "loginToMainPageSegue", sender: nil)
                 } else {
                     let alertController = UIAlertController(title: "Error",
                                                             message: error?.localizedDescription,
@@ -87,5 +88,11 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //send value to mainPage
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mainVC:MainPageViewController = segue.destination as! MainPageViewController
+        mainVC.userData = "DataSend"
+    }
 
 }
