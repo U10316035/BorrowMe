@@ -16,6 +16,8 @@
 		88C9E7101F6234B30065DA9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C9E70F1F6234B30065DA9F /* MapKit.framework */; };
 		88C9E7121F6234DD0065DA9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E7111F6234DD0065DA9F /* MapViewController.swift */; };
 		88CF6F111F626D9A0060CB73 /* FinishUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF6F101F626D9A0060CB73 /* FinishUploadViewController.swift */; };
+		88CF6F131F638C4E0060CB73 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF6F121F638C4E0060CB73 /* ChatRoomViewController.swift */; };
+		88CF6F151F638C610060CB73 /* ChatRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF6F141F638C610060CB73 /* ChatRoomListViewController.swift */; };
 		88F8F9FA1F62454500341A01 /* BorrowPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F8F9F91F62454500341A01 /* BorrowPageViewController.swift */; };
 		A54440BB061A06C5CB21F3F0 /* Pods_BorrowME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */; };
 		CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3776651F5BB55E00992015 /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 		88C9E70F1F6234B30065DA9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		88C9E7111F6234DD0065DA9F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		88CF6F101F626D9A0060CB73 /* FinishUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishUploadViewController.swift; sourceTree = "<group>"; };
+		88CF6F121F638C4E0060CB73 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		88CF6F141F638C610060CB73 /* ChatRoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomListViewController.swift; sourceTree = "<group>"; };
 		88F8F9F91F62454500341A01 /* BorrowPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowPageViewController.swift; sourceTree = "<group>"; };
 		CE3776621F5BB55E00992015 /* BorrowME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorrowME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3776651F5BB55E00992015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				88C9E7111F6234DD0065DA9F /* MapViewController.swift */,
 				88F8F9F91F62454500341A01 /* BorrowPageViewController.swift */,
 				88CF6F101F626D9A0060CB73 /* FinishUploadViewController.swift */,
+				88CF6F121F638C4E0060CB73 /* ChatRoomViewController.swift */,
+				88CF6F141F638C610060CB73 /* ChatRoomListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 				CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */,
 				888923ED1F612DA100F935AF /* ResetPasswordViewController.swift in Sources */,
 				88C9E7121F6234DD0065DA9F /* MapViewController.swift in Sources */,
+				88CF6F151F638C610060CB73 /* ChatRoomListViewController.swift in Sources */,
+				88CF6F131F638C4E0060CB73 /* ChatRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

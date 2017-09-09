@@ -17,7 +17,7 @@ class BorrowPageViewController: UIViewController {
     @IBOutlet weak var descriptionField: UITextView!
     
     //use for test id
-    var userId:String = "00000000"
+    var userId:String = "00000001"
     
     //database connection
     var ref: DatabaseReference!
