@@ -14,4 +14,13 @@ class MainPageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var borrowItem: UILabel!
+    
+    @IBOutlet weak var borrowTime: UILabel!
+    
+    @IBOutlet weak var itemDescription: UITextView!
+    
+    
+    @IBOutlet weak var itemPic: UIImageView!
+    
+    @IBOutlet weak var chatButton: UIButton!
 }

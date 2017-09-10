@@ -12,10 +12,22 @@ import FirebaseAuth
 
 class ResetPasswordViewController: UIViewController {
 
+    @IBOutlet weak var emailFieldLabel: UILabel!
     @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //set view style
+        emailFieldLabel.layer.borderWidth = 2
+        emailFieldLabel.layer.borderColor = UIColor.white.cgColor
+        emailFieldLabel.layer.cornerRadius = 8
+        
+        sendButton.layer.cornerRadius = 15
+        
+        emailField.attributedPlaceholder = NSAttributedString(string:"輸入EMail", attributes:[NSAttributedStringKey.foregroundColor: UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)])
+        //set view end
+        
         // Do any additional setup after loading the view.
     }
 
