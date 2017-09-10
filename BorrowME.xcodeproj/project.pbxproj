@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8819825E1F5E955800306D08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8819825D1F5E955800306D08 /* GoogleService-Info.plist */; };
+		8867FA8B1F6520270059441B /* BorrowMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8867FA8A1F6520270059441B /* BorrowMapViewController.swift */; };
 		886AEF271F63D91D00D68CD6 /* borrowListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886AEF261F63D91D00D68CD6 /* borrowListStruct.swift */; };
 		886B77E21F60F7F200E7B3EB /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B77E11F60F7F200E7B3EB /* MainPageViewController.swift */; };
 		886B77E41F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		0D2B8B6CDC47078BF880BCB1 /* Pods_BorrowME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BorrowME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8819825D1F5E955800306D08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8867FA8A1F6520270059441B /* BorrowMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowMapViewController.swift; sourceTree = "<group>"; };
 		886AEF261F63D91D00D68CD6 /* borrowListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borrowListStruct.swift; sourceTree = "<group>"; };
 		886B77E11F60F7F200E7B3EB /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		886B77E31F60FBDB00E7B3EB /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				88CF6F121F638C4E0060CB73 /* ChatRoomViewController.swift */,
 				88CF6F141F638C610060CB73 /* ChatRoomListViewController.swift */,
 				88DF2EE71F64F6E70099C7D6 /* DownMenuTableViewController.swift */,
+				8867FA8A1F6520270059441B /* BorrowMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				88CF6F111F626D9A0060CB73 /* FinishUploadViewController.swift in Sources */,
 				886B77E21F60F7F200E7B3EB /* MainPageViewController.swift in Sources */,
 				888923E91F611BAB00F935AF /* LoginViewController.swift in Sources */,
+				8867FA8B1F6520270059441B /* BorrowMapViewController.swift in Sources */,
 				CE3776661F5BB55E00992015 /* AppDelegate.swift in Sources */,
 				886AEF271F63D91D00D68CD6 /* borrowListStruct.swift in Sources */,
 				888923ED1F612DA100F935AF /* ResetPasswordViewController.swift in Sources */,

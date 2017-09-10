@@ -7,10 +7,16 @@
 //
 
 import UIKit
+protocol menuSegue {
+    func sendData(a:Bool)
+}
 
 class DownMenuTableViewController: UITableViewController {
 
     @IBOutlet var menuTable: UITableView!
+    
+    //send data segue
+    var del:menuSegue!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +48,17 @@ class DownMenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        switch indexPath.row{
+            
+        case 3: del.sendData(a:true)
+            
+        
+            
+        default: break
+            
+        }
+        
         //Change the selected background view of the cell.
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -100,5 +117,5 @@ class DownMenuTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

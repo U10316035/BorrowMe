@@ -9,17 +9,26 @@
 import UIKit
 import Firebase
 
-class MainPageViewController: UIViewController,UICollectionViewDataSource {
+class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSegue {
+    //close from menu view
+    func sendData(a: Bool) {
+        menuView.isHidden = a
+    }
+    
     //login get user data
     var userData:[String:Any]? = ["userId": "00000000"]//:String = ""//(String,Any)? = nil
     
+    @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var mainPageCollectionView: UICollectionView!
+    
     var downloadData:[String:Any] = [:]
     var dataKeyArray:[String] = []
     var timeArrayInt:[Int] = []
     var userId:[String] = []
     var userNameArray:[String] = []
     var dataLoaded = false
+    
+    private var menuViewVC: DownMenuTableViewController!
     
     var ref: DatabaseReference!
     
@@ -68,6 +77,11 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //hide menu
+        menuView.isHidden = true
+        
+        menuViewVC.del = self
         
         //set background color
         let myColor = UIColor(red: 0.196, green: 0.149, blue: 0.416, alpha: 1)
@@ -233,6 +247,14 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource {
             borrowVC.userId = id
             }
         }
+        
+        if segue.identifier == "downMenu"{
+            menuViewVC = segue.destination as! DownMenuTableViewController
+        }
     }
-
+    
+    @IBAction func showMenu(_ sender: Any) {
+        menuView.isHidden = false
+    }
+    
 }
