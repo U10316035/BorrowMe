@@ -134,6 +134,7 @@ class LoginViewController: UIViewController {
             let mainVC:MainPageViewController = segue.destination as! MainPageViewController
 
             mainVC.userData = sendUserData
+            //print(sendUserData)
             //mainVC.userData = "DataSend"
         }
     }

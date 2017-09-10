@@ -19,17 +19,21 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     }
     
     //login get user data
-    var userData:[String:Any]? = ["userId": "00000000"]//:String = ""//(String,Any)? = nil
+    var userData:[String:Any]? = [:]//:String = ""//(String,Any)? = nil
     
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var mainPageCollectionView: UICollectionView!
     
+    @IBOutlet weak var bell: UIImageView!
     var downloadData:[String:Any] = [:]
     var dataKeyArray:[String] = []
     var timeArrayInt:[Int] = []
     var userId:[String] = []
     var userNameArray:[String] = []
     var dataLoaded = false
+    
+    //count of user item
+    var userItem = 0
     
     private var menuViewVC: DownMenuTableViewController!
     
@@ -69,6 +73,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         if !dataLoaded{
             cell?.userName.text = ""
         }else{
+            //print("\(indexPath.row)\(userNameArray[indexPath.row])")
             cell?.userName.text = userNameArray[indexPath.row]
             //cell animation
             UIView.animate(withDuration: 0.5, delay: TimeInterval(Double(indexPath.row)/5),animations: {
@@ -99,6 +104,19 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         //reference to firebase
         ref = Database.database().reference()
         
+        //bell
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0,
+//                       usingSpringWithDamping: 0.8,
+//                       initialSpringVelocity: 5,
+//                       options: [.repeat],
+//                       animations: {
+//                        self.bell.frame = CGRect(x: 315, y:
+//                            56, width: self.bell.frame.size.width,height: self.bell.frame.size.height)
+//        }, completion: nil)
+//
+//        bell.layer.removeAllAnimations()
+        
         //set collectionview
         self.mainPageCollectionView.dataSource = self
         let transparentColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
@@ -114,7 +132,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         super.viewWillAppear(animated)
         
         //print(userData)
-        
+        //userData = [:]
         //initial value
         timeArrayInt = []
         dataKeyArray = []
@@ -122,6 +140,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         userNameArray = []
         downloadData = [:]
         dataLoaded = false
+        userItem = 0
         getBorrowListData()
         self.mainPageCollectionView.reloadData()
     }
@@ -182,15 +201,20 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     
     func getUserData(){
         let dataCount = userId.count
-        for userItem in 0..<dataCount{
+        //for userItem in 0..<dataCount{
+        if userItem < dataCount{
+            //print(userId[userItem])
             ref.child("user").child("user\(userId[userItem])").observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 if let data = snapshot.value as? NSDictionary{
                     if let nameInBase = data["name"] as? String{
                         self.userNameArray.append(nameInBase)
+                        print(nameInBase)
+                        self.userItem += 1
+                        self.getUserData()
                     }
                 }
-                if userItem == dataCount - 1{
+                if self.userItem == dataCount - 1{
                     self.dataLoaded = true
                     self.mainPageCollectionView.reloadData()
                 }
@@ -211,6 +235,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         var maxNum:Int = 0
         var maxIndex:Int = -1
         for i in 0..<strArray.count{
+            maxIndex = -1
             maxNum = timeArrayInt[i]
             if i == strArray.count - 1{
                 break
@@ -244,7 +269,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         }
         //print(timeArrayInt)
         getUserData()
-        self.mainPageCollectionView.reloadData()
+        //self.mainPageCollectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -252,7 +277,8 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
             let borrowVC:BorrowPageViewController = segue.destination as! BorrowPageViewController
         
             if let id = userData!["id"] as? String{
-            borrowVC.userId = id
+                borrowVC.userId = id
+                print("123" + id)
             }
         }
         

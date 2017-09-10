@@ -18,7 +18,7 @@ class BorrowPageViewController: UIViewController {
     
     @IBOutlet weak var sendButton: UIButton!
     //use for test id
-    var userId:String = "00000001"
+    var userId:String = ""
     
     //database connection
     var ref: DatabaseReference!

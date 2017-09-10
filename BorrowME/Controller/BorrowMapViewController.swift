@@ -16,9 +16,18 @@ class BorrowMapViewController: UIViewController, CLLocationManagerDelegate,MKMap
     
     var locManager: CLLocationManager?
     
+    let coords = [  CLLocation(latitude: 25.0386, longitude: 121.516529),
+                    CLLocation(latitude: 25.03648, longitude: 121.51231),
+                    CLLocation(latitude: 25.036785, longitude:121.517),
+                    CLLocation(latitude:25.035585, longitude:121.514529)
+    ];
+    
+    let names = ["Peter" , "Tom", "Chase", "Michael"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initMap()
+        addAnnotations(coords: coords)
         // Do any additional setup after loading the view.
     }
 
@@ -90,6 +99,37 @@ class BorrowMapViewController: UIViewController, CLLocationManagerDelegate,MKMap
             }
         }
         self.getCurrentLocation()
+    }
+    
+    func addAnnotations(coords: [CLLocation]){
+        var i = 0
+        for coord in coords{
+            let CLLCoordType = CLLocationCoordinate2D(latitude: coord.coordinate.latitude,
+                longitude: coord.coordinate.longitude);
+            let anno = MKPointAnnotation();
+            anno.coordinate = CLLCoordType;
+            anno.title = names[i]
+            mapView.addAnnotation(anno);
+            i += 1
+        }
+        
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{
+            return nil;
+        }else{
+            let pinIdent = "Pin";
+            var pinView: MKPinAnnotationView;
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
+                dequeuedView.annotation = annotation;
+                pinView = dequeuedView;
+            }else{
+                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdent);
+                
+            }
+            return pinView;
+        }
     }
 
 }
