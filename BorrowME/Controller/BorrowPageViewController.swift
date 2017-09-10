@@ -16,6 +16,7 @@ class BorrowPageViewController: UIViewController {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     
+    @IBOutlet weak var sendButton: UIButton!
     //use for test id
     var userId:String = "00000001"
     
@@ -82,7 +83,7 @@ class BorrowPageViewController: UIViewController {
     func setViewFunc(){
         
         //common value
-        let width = CGFloat(2.0)
+        let width = CGFloat(3.0)
         let myColor = UIColor(red: 0.09, green: 0.165, blue: 0.533, alpha: 1)
         
         //itemField
@@ -112,5 +113,7 @@ class BorrowPageViewController: UIViewController {
         timeField.layer.masksToBounds = true
         timeField.attributedPlaceholder = NSAttributedString(string:"Due Time", attributes:[NSAttributedStringKey.foregroundColor: UIColor(red: 0.09, green: 0.165, blue: 0.533, alpha: 1)])
         
+        //send button
+        sendButton.layer.cornerRadius = 15
     }
 }

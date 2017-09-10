@@ -12,7 +12,10 @@ import Firebase
 class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSegue {
     //close from menu view
     func sendData(a: Bool) {
-        menuView.isHidden = a
+        UIView.animate(withDuration: 0, delay: 0,animations: {
+            self.menuView.center.y = 896
+            self.menuView.isHidden = a
+        }, completion: nil)
     }
     
     //login get user data
@@ -38,6 +41,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MainPageCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "coCell", for:indexPath ) as? MainPageCollectionViewCell
+        cell?.alpha = 0
         
         //set view
         cell?.layer.cornerRadius = 8
@@ -66,10 +70,16 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
             cell?.userName.text = ""
         }else{
             cell?.userName.text = userNameArray[indexPath.row]
+            //cell animation
+            UIView.animate(withDuration: 0.5, delay: TimeInterval(Double(indexPath.row)/5),animations: {
+                cell?.alpha = 1
+            }, completion: nil)
+
         }
         //cell?.borrowItem.text = downloadData[dataKeyArray[indexPath.row]]["item"]
 //        cell?.borrowItem.layer.borderColor = UIColor.blue as! CGColor;
 //        cell?.borrowItem.layer.borderWidth = 1.0;
+        
         
         return cell!
     }
@@ -77,9 +87,8 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //hide menu
+        //set menu
         menuView.isHidden = true
-        
         menuViewVC.del = self
         
         //set background color
@@ -254,6 +263,9 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     
     @IBAction func showMenu(_ sender: Any) {
         menuView.isHidden = false
+        UIView.animate(withDuration: 0.5, delay: 0,animations: {
+                self.menuView.center.y = 600
+        }, completion: nil)
     }
     
 }
