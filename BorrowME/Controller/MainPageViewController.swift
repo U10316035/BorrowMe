@@ -39,12 +39,11 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MainPageCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "coCell", for:indexPath ) as? MainPageCollectionViewCell
         
-        
+        //set view
         cell?.layer.cornerRadius = 8
         cell?.layer.masksToBounds = true
-        
-//        var userId:String = ""
-        
+        cell?.chatButton.layer.cornerRadius = 15
+        //end set view
         
         //print(downloadData[dataKeyArray[indexPath.row]])
         if let dict = downloadData[dataKeyArray[indexPath.row]] as? [String: Any]{
