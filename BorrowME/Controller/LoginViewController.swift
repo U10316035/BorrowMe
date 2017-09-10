@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     
     var downloadData:[String:Any] = [:]
     
-    var whichSegue = 0
+    //var whichSegue = 2
     
     var sendUserData:[String: Any] = [:]
     
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
                 if error == nil {
 //                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainPage")
 //                    self.present(vc!, animated: true, completion: nil)
-                    self.whichSegue = 0
+                    //self.whichSegue = 0
                     
                     //call prepare data to next view
                     self.prepareToGoMainPage()
@@ -92,7 +92,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonAct(_ sender: Any) {
-        whichSegue = 1
+        //whichSegue = 1
         performSegue(withIdentifier: "signUpSegue", sender: nil)
     }
     /*
@@ -130,7 +130,7 @@ class LoginViewController: UIViewController {
     
     //send value to mainPage
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if whichSegue == 0{
+        if segue.identifier == "loginToMainPageSegue"{
             let mainVC:MainPageViewController = segue.destination as! MainPageViewController
 
             mainVC.userData = sendUserData
