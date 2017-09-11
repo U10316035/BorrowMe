@@ -9,7 +9,15 @@
 import UIKit
 import Firebase
 
-class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSegue {
+class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSegue,borrowPageSegue {
+    func sendBellData(a: Bool) {
+        if a{
+            //bell
+            print("inininin")
+            isbellRing = true
+        }
+    }
+    
     //close from menu view
     func sendData(a: Bool) {
         UIView.animate(withDuration: 0, delay: 0,animations: {
@@ -31,6 +39,8 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     var userId:[String] = []
     var userNameArray:[String] = []
     var dataLoaded = false
+    
+    var isbellRing = false
     
     //count of user item
     var userItem = 0
@@ -104,7 +114,6 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         //reference to firebase
         ref = Database.database().reference()
         
-        //bell
 //        UIView.animate(withDuration: 0.5,
 //                       delay: 0,
 //                       usingSpringWithDamping: 0.8,
@@ -131,6 +140,7 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
+        ifBellRing()
         //print(userData)
         //userData = [:]
         //initial value
@@ -278,8 +288,10 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         
             if let id = userData!["id"] as? String{
                 borrowVC.userId = id
-                print("123" + id)
+                print(id)
             }
+            
+            borrowVC.del = self
         }
         
         if segue.identifier == "downMenu"{
@@ -294,4 +306,43 @@ class MainPageViewController: UIViewController,UICollectionViewDataSource,menuSe
         }, completion: nil)
     }
     
+    @IBAction func home(segue:UIStoryboardSegue){
+//        //bell
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0,
+//                       usingSpringWithDamping: 0.8,
+//                       initialSpringVelocity: 5,
+//                       options: [.repeat],
+//                       animations: {
+//                                self.bell.frame = CGRect(x: 315, y:
+//                                56, width: self.bell.frame.size.width,height: self.bell.frame.size.height)
+//        }, completion: nil)
+        
+        print(segue.source)
+    }
+    
+    func ifBellRing(){
+        if isbellRing{
+            print("...")
+            bell.image = UIImage(named: "bellRing")
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 5,
+                           options: [.repeat],
+                           animations: {
+                            self.bell.frame = CGRect(x: 315, y:
+                                56, width: self.bell.frame.size.width,height: self.bell.frame.size.height)
+            }, completion: nil)
+        }
+    }
+    
+    @IBAction func bellButtonAct(_ sender: Any) {
+        if isbellRing{
+            bell.layer.removeAllAnimations()
+            performSegue(withIdentifier: "mainPageToMapPage", sender: nil)
+            isbellRing = false
+            bell.image = UIImage(named: "notification")
+        }
+    }
 }

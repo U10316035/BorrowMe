@@ -132,4 +132,7 @@ class BorrowMapViewController: UIViewController, CLLocationManagerDelegate,MKMap
         }
     }
 
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

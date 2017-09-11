@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+protocol borrowPageSegue {
+    func sendBellData(a:Bool)
+}
+
 class BorrowPageViewController: UIViewController {
     @IBOutlet weak var itemField: UITextField!
     @IBOutlet weak var locationField: UITextField!
@@ -25,6 +29,9 @@ class BorrowPageViewController: UIViewController {
     
     //data to upload
     var uploadData:[String:Any] = [:]
+    
+    //send data segue
+    var del:borrowPageSegue!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +53,8 @@ class BorrowPageViewController: UIViewController {
     }
     
     @IBAction func confirm(_ sender: Any) {
+        del.sendBellData(a:true)
+        
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"
